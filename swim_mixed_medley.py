@@ -17,7 +17,7 @@ f = pd.ExcelFile('swimmer_times.xlsx')
 
 names = []
 genders = []
-time = None
+time = float('inf')
 
 for i, row in f.parse(sheet_name = 'Back').iterrows(): # i is for name accessing
     N1 = row['Name']
@@ -49,11 +49,7 @@ for i, row in f.parse(sheet_name = 'Back').iterrows(): # i is for name accessing
 
                 total = sum([T1, T2, T3, T4])
 
-                if time is None:
-                    names = [N1, N2, N3, N4]
-                    genders = [G1, G2, G3, G4]
-                    time = total
-                elif total < time:
+                if total < time:
                     names = [N1, N2, N3, N4]
                     genders = [G1, G2, G3, G4]
                     time = total
