@@ -1,8 +1,8 @@
 # Run: py swim_mixed_medley.py
-import pandas as pd
 import datetime
-import time
 import os
+import pandas as pd
+import time
 
 os.system('cls')
 
