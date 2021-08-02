@@ -1,4 +1,3 @@
-# Run: py swim_mixed_medley.py
 import datetime
 import os
 import pandas as pd
@@ -15,28 +14,26 @@ def str2sec(time_str):
 
 f = pd.ExcelFile('swimmer_times.xlsx')
 
-names = []
-genders = []
 time = float('inf')
 
 for i, row in f.parse(sheet_name = 'Back').iterrows(): # i is for name accessing
     N1 = row['Name']
-    G1 = row['Gender']
+    G1 = row['Gender (M/F)']
     T1 = str2sec(row['Time'])
 
     for i, row in f.parse(sheet_name = 'Breast').iterrows():
         N2 = row['Name']
-        G2 = row['Gender']
+        G2 = row['Gender (M/F)']
         T2 = str2sec(row['Time'])
                 
         for i, row in f.parse(sheet_name = 'Fly').iterrows():
             N3 = row['Name']
-            G3 = row['Gender']
+            G3 = row['Gender (M/F)']
             T3 = str2sec(row['Time'])
                         
             for i, row in f.parse(sheet_name = 'Free').iterrows():
                 N4 = row['Name']
-                G4 = row['Gender']
+                G4 = row['Gender (M/F)']
                 T4 = str2sec(row['Time'])
                 
                 # Check for duplicates in relay
@@ -44,7 +41,7 @@ for i, row in f.parse(sheet_name = 'Back').iterrows(): # i is for name accessing
                     continue
 
                 # Check if there's more than 2 per gender
-                elif [G1, G2, G3, G4].count('M') > 2 or [G1, G2, G3, G4].count('W') > 2:
+                elif [G1, G2, G3, G4].count('M') > 2 or [G1, G2, G3, G4].count('F') > 2:
                     continue
 
                 total = sum([T1, T2, T3, T4])

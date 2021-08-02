@@ -1,5 +1,5 @@
 # Mixed-Medley-Relay-Generator
-Determines the 2 male and 2 female swimmers for the fastest mixed medley relay time.
+Determines the 2 male and 2 female swimmers for the fastest mixed medley relay time based on times in an Excel spreadsheet.
 
 ## To push new updates to GitHub, use lines:
 ```
