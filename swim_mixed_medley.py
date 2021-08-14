@@ -1,7 +1,5 @@
-import datetime
-import os
+import datetime, os, time
 import pandas as pd
-import time
 
 os.system('cls')
 
