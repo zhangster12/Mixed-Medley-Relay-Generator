@@ -10,5 +10,5 @@ git push origin
 
 ## To run script, use line:
 ```
-# Run: py swim_mixed_medley.py
+py swim_mixed_medley.py
 ```
