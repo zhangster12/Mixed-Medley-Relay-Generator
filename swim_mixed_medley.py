@@ -47,8 +47,13 @@ for i, row in f.parse(sheet_name = 'Back').iterrows(): # i is for name accessing
                 if total < time:
                     names = [N1, N2, N3, N4]
                     genders = [G1, G2, G3, G4]
+                    each_time = [T1, T2, T3, T4]
                     time = total
 
 print(names)
 print(genders)
+
+for ind_time in each_time:
+    print(datetime.timedelta(seconds = ind_time))
+    
 print(datetime.timedelta(seconds = time))
